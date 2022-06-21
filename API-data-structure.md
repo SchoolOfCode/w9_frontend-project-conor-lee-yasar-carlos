@@ -23,14 +23,15 @@ Returns all the days for the specified week number
       resouces: [
         {
           id: 'number',
-          text: 'string',
+          topic: 'string',
+          url: 'string'
           rating: 'boolen'
         }
       ],
       list: [
         {
           id: 'alpha',
-          content: 'string',
+          topic: 'string',
           rating: 'number',
           weekend: 'true',
           completed: 'boolean',
@@ -86,14 +87,15 @@ changin and keep the rest the same.
       resouces: [
         {
           id: 'number',
-          text: 'string',
+          topic: 'string',
+          url: 'string,
           rating: 'boolen'
         }
       ],
       list: [
         {
           id: 'alpha',
-          content: 'string',
+          topic: 'string',
           rating: 'number',
           weekend: 'true',
           completed: 'boolean',
