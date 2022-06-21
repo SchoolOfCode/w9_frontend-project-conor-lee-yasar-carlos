@@ -333,7 +333,11 @@ h2 {
   margin-right: 1.3vh;
   width: 4vw;
   height: 3vh;
+}
 
+.plus-icon {
+  height: 3vh;
+  width: 3vw;
 }
 
 svg {
@@ -394,4 +398,8 @@ input {
       #29815a, #54c290
     );
     box-shadow: 3px 3px 1.2px 0px rgba(29, 29, 29, 0.75);
+}
+
+.weekend-button {
+  visibility: hidden;
 }

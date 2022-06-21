@@ -1,7 +1,7 @@
 import React from "react";
 import ListItem from "./Todo-listitem/ListItem";
 
-function Todo({ toDoClass, resourceClass, data }) {
+function Todo({ toDoClass, resourceClass, data, weekendClick }) {
   return (
     <div className="todo">
       <div className={toDoClass}>
@@ -9,7 +9,7 @@ function Todo({ toDoClass, resourceClass, data }) {
           <h2>Today's subjects</h2>
         </div>
         {data.map((input) => {
-          return <ListItem text={input.content} id={input.id} />;
+          return <ListItem weekendClick={weekendClick} text={input.content} id={input.id} />;
         })}
       </div>
       <div className={resourceClass}>
