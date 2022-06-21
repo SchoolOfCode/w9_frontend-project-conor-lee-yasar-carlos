@@ -21,10 +21,13 @@ function App() {
       <h1>Bootcamper Organiser</h1>
       <div className='title-underline'></div>
       <main>
-      <div className='categories-map'>
-      {dayButton.map((input) => {
-        return <Categories testButton={input.day} text={input.text} handleClick={handleClick}/>
-      })}
+      <div className='categories'>
+          <input  type="text" />
+          <div className='categories-map'>
+          {dayButton.map((input) => {
+            return <Categories testButton={input.day} text={input.text} handleClick={handleClick}/>
+          })}
+          </div>
       </div>
        <Todo toDoClass={toDoClass} resourceClass={resourcesClass}/>
       </main>

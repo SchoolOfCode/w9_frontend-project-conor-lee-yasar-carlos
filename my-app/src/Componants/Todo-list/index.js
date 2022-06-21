@@ -4,13 +4,17 @@ function Todo({ toDoClass, resourceClass }) {
   return (
     <div className='todo'>
         <div className={toDoClass}>
-            <h2>Today's subjects</h2>
+            <div className='h2'>
+              <h2>Today's subjects</h2>
+            </div>
             <div className='todo-list-item'>
-
+              <p className='list-item-text'>React useState</p>
             </div>
         </div>
         <div className={resourceClass}>
-            <h2>Resources</h2>
+            <div className='h2'>
+              <h2>Resources</h2>
+            </div>
             <div className='resource-list-item'>
 
             </div>
