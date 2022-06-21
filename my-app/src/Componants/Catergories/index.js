@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Categories({ handleClick, text, testButton }) {
+function Categories({ handleClick, text, dayButton, id }) {
   return (
       
-     <button className='day-one-button category-button' onClick={handleClick}>Day {testButton} </button>
+     <button id={id} className='day-one-button category-button' onClick={handleClick}>Day {dayButton} </button>
     
   )
 }
