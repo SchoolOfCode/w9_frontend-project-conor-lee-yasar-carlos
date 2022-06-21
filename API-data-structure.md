@@ -24,7 +24,7 @@ Returns all the days for the specified week number
         {
           id: 'number',
           topic: 'string',
-          url: 'string'
+          url: 'string',
           rating: 'boolen'
         }
       ],
@@ -88,7 +88,7 @@ changin and keep the rest the same.
         {
           id: 'number',
           topic: 'string',
-          url: 'string,
+          url: 'string',
           rating: 'boolen'
         }
       ],
