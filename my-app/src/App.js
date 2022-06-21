@@ -11,12 +11,16 @@ function App() {
   const [dayId, setDayId] = useState(0);
   const [input, setInput] = useState("Week 1");
 
-  const [dayButton, setDayButton] = useState([{day: 1, text: [{id: 1, content: "Day 1 test"},{id: 2, content: "Day 1 again"},{id: 2, content: "Day 1 x3"}]}, {day: 2, text: [{id: 1, content: "Day 2 content"},{id: 2, content: "Day 2 Test again"}]}, {day: 3, text: "test3"}, {day: 4, text: "test4"}, {day: 5, text: "test5"}])
+  const [dayButton, setDayButton] = useState([{day: 1, text: [{id: 1, content: "Day 1 test"},{id: 2, content: "Day 1 again"},{id: 3, content: "Day 1 x3"}]}, {day: 2, text: [{id: 1, content: "Day 2 content"},{id: 2, content: "Day 2 Test again"}]}, {day: 3, text: "test3"}, {day: 4, text: "test4"}, {day: 5, text: "test5"}])
 
   function handleClick(e) {
     setDayId(e.target.id - 1)
     setToDoClass("todo-container")
     setResourcesClass("resources-container")
+  }
+
+  function weekendAddClick(e) {
+
   }
 
 
@@ -33,8 +37,9 @@ function App() {
             return <Categories id={input.day} dayButton={input.day} text={input.text} handleClick={handleClick}/>
           })}
           </div>
+          <button className='weekend-button category-button' onClick={handleClick}>Weekend</button>
       </div>
-       <Todo toDoClass={toDoClass} resourceClass={resourcesClass} data={dayButton[dayId].text}/>
+       <Todo weekendClick={weekendAddClick} toDoClass={toDoClass} resourceClass={resourcesClass} data={dayButton[dayId].text}/>
       </main>
     </div>
   );
