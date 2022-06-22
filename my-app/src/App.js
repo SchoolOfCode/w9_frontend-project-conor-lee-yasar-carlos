@@ -79,6 +79,8 @@ function App() {
       <h1>Bootcamper Organiser</h1>
       <div className="title-underline"></div>
       <main>
+      <div className='categories-container'>
+      <div className="categories-box">
         <div className="categories">
         <Dropdown  selected={selected} setSelected={setSelected} setInput={setInput}/>
           <div className="categories-map">
@@ -96,6 +98,8 @@ function App() {
           </div>
           <WeekendButton weekendButtonClick={weekendButtonClick} />
         </div>
+        </div>
+      </div>
         <Todo
           weekendClick={weekendAddClick}
           toDoClass={toDoClass}
