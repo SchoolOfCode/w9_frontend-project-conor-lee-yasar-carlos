@@ -5,6 +5,7 @@ import ListItem from "./Todo-listitem";
 function TodoList({
   listData,
   weekendClick,
+  updateStarRating
 }) {
     return (
         <div className="todo-box">
@@ -21,6 +22,7 @@ function TodoList({
                 completed={task.completed}
                 rating={task.rating}
                 id={task.id}
+                updateStarRating={updateStarRating}
               />
             );
           })}

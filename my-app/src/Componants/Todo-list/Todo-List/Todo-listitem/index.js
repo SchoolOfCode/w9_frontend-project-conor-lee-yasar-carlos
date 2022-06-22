@@ -5,7 +5,7 @@ import { AiOutlineCheckCircle } from 'react-icons/ai'
 import { BsChevronCompactDown } from 'react-icons/bs'
 
 
-function ListItem({id, taskName, weekend, completed, rating, weekendClick}) {
+function ListItem({id, taskName, weekend, completed, rating, weekendClick, updateStarRating}) {
   return (
     <div className='comlete-list-item'>
       <div className='completed'>
@@ -15,7 +15,7 @@ function ListItem({id, taskName, weekend, completed, rating, weekendClick}) {
         <div className='todo-list-content'>
           <p className='list-item-text'>{taskName}</p>
           <div className='icon-box' >
-            <StarRating taskRating={rating} />         
+            <StarRating taskRating={rating} updateStarRating={updateStarRating} taskId={id} />         
           </div>
         </div>
         <span className='chevron-icon'><BsChevronCompactDown /></span>

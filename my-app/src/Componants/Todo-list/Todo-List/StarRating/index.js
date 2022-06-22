@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 
 // comment
-function StarRating({ taskRating }) {
+function StarRating({ taskRating, updateStarRating, taskId }) {
   const [rating, setRating] = useState(taskRating);
   const [hover, setHover] = useState(0);
   return (
@@ -15,7 +15,10 @@ function StarRating({ taskRating }) {
             type="button"
             key={index}
             className={index <= (hover || rating) ? "on" : "off"}
-            onClick={() => setRating(index)}
+            onClick={() => {
+              setRating(index);
+              updateStarRating({ rating: index, taskId: taskId });
+            }}
             onMouseEnter={() => setHover(index)}
             onMouseLeave={() => setHover(rating)}
           >

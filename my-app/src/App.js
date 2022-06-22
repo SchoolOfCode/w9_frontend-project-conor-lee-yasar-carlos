@@ -55,6 +55,21 @@ function App() {
     setWeekendListData(weekendListData.filter((index) => index.id !== input));
   }
 
+  // update the star rating of a task
+  function updateStarRating({rating, taskId}) {
+    let found = false;
+    dayData.forEach(day => {
+      day.list.forEach((task, index) => {
+        if (task.id === taskId) {
+          setDayData(() => [...dayData.slice(0, day.day - 1), {...day, list: [...day.list.slice(0, index), {...task, rating: rating}, ...day.list.slice(index + 1)]}, ...dayData.slice(day.day)])
+          found = true;
+          return
+        }
+      })
+      if (found) {return}
+    })
+  }
+
   // fetches data from the server based on the week selected from the dropdown
   async function getDayData() {
     let response = await fetch(
@@ -105,6 +120,7 @@ function App() {
           weekendCheck={weekendCheck}
           weekendListData={weekendListData}
           weekendListDelete={weekendDelete}
+          updateStarRating={updateStarRating}
         />
       </main>
     </div>
