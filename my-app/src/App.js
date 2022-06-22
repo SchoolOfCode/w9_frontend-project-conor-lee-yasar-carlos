@@ -10,7 +10,6 @@ function App() {
   const [toDoClass, setToDoClass] = useState("default-invis");
   const [resourcesClass, setResourcesClass] = useState("default-invis");
   const [dayId, setDayId] = useState(0);
-  const [dropdownData, setDropdownData] = useState(1);
   const [weekendCheck, setWeekendCheck] = useState(false);
   const [input, setInput] = useState(1)
   const [selected, setSelected] = useState("Choose Week")
