@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 
-const StarRating = () => {
-  const [rating, setRating] = useState(0);
+
+// comment
+function StarRating({ taskRating }) {
+  const [rating, setRating] = useState(taskRating);
   const [hover, setHover] = useState(0);
-  console.log(rating)
   return (
     <div className="star-rating">
       {[...Array(5)].map((star, index) => {

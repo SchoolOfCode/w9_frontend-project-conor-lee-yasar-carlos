@@ -17,11 +17,7 @@ function App() {
   const [weekendListData, setWeekendListData] = useState([]);
 
   const [dayData, setDayData] = useState([
-    { list: [{ id: 1, topic: "" }], resources: [{ id: 1, topic: "", url: "" }] },
-  ]);
-
-  const [dayButtonData, setDayButtonData] = useState([
-    { list: [{ id: 1, topic: "" }] },
+    { list: [{ id: 1, topic: "" }], resources: [{ id: 1, topic: "", url: "", rating: 2 }] },
   ]);
 
   // day button click changes div classes to visible and sets weekend check to false and sets the day id
@@ -66,7 +62,6 @@ function App() {
     );
     let data = await response.json();
     setDayData(data.payload);
-    setDayButtonData(data.payload);
   }
 
   useEffect(() => {
@@ -85,7 +80,7 @@ function App() {
         <div className="categories">
         <Dropdown  selected={selected} setSelected={setSelected} setInput={setInput}/>
           <div className="categories-map">
-            {dayButtonData.map((input) => {
+            {dayData.map((input) => {
               return (
                 <Categories
                   key={input.day + 1}
