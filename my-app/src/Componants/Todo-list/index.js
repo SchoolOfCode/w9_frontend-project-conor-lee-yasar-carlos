@@ -1,7 +1,7 @@
 import React from "react";
-import ResourceItem from "./Resources-listitem";
-import ListItem from "./Todo-listitem/ListItem";
-import WeekendListItem from "./Weekend-listitem/ListItem";
+import TodoList from "./Todo-List";
+import ResourceList from "./Resources-List";
+import WeekendList from "./Weekend-List";
 
 function Todo({
   toDoClass,
@@ -17,34 +17,16 @@ function Todo({
     return (
       <div className="todo">
         <div className={toDoClass}>
-          <div className="h2">
-            <h2>Today's subjects</h2>
-          </div>
-          {weekendListData.map((input) => {
-            return (
-              <WeekendListItem
-                key={input.id}
-                weekendClick={weekendClick}
-                listData={input.topic}
-                weekendListDelete={weekendListDelete}
-                weekendId={input.id}
-              />
-            );
-          })}
+          <WeekendList
+            weekendListData={weekendListData}
+            weekendListDelete={weekendListDelete}
+            weekendClick={weekendClick}
+          />
         </div>
         <div className={resourceClass}>
-          <div className="h2">
-            <h2>Resources</h2>
-          </div>
-          {resourceData.map((input) => {
-            return (
-              <ResourceItem
-                key={input.id}
-                data={input.topic}
-                link={input.url}
-              />
-            );
-          })}
+          <ResourceList
+            resourceData={resourceData}
+          />
         </div>
       </div>
     );
@@ -52,33 +34,12 @@ function Todo({
     return (
       <div className="todo">
         <div className={toDoClass}>
-          <div className="h2">
-            <h2>Today's subjects</h2>
-          </div>
-          {listData.map((input) => {
-            return (
-              <ListItem
-                key={input.id}
-                weekendClick={weekendClick}
-                listData={input.topic}
-                id={input.id}
-              />
-            );
-          })}
+          <TodoList weekendClick={weekendClick} listData={listData} />
         </div>
         <div className={resourceClass}>
-          <div className="h2">
-            <h2>Resources</h2>
-          </div>
-          {resourceData.map((input) => {
-            return (
-              <ResourceItem
-                key={input.id}
-                data={input.topic}
-                link={input.url}
-              />
-            );
-          })}
+          <ResourceList
+            resourceData={resourceData}
+          />
         </div>
       </div>
     );

@@ -14,47 +14,55 @@ function App() {
   const [weekendCheck, setWeekendCheck] = useState(false);
 
   const [weekendListData, setWeekendListData] = useState([]);
-  
-  // { list: [{ id: 1, topic: "" }]}
 
   const [dayData, setDayData] = useState([
-    { list: [{ id: 1, topic: "" }], 
-      resouces: [{ id: 1, topic: "", url: "" }]
-  }]);
+    { list: [{ id: 1, topic: "" }], resouces: [{ id: 1, topic: "", url: "" }] },
+  ]);
 
   const [dayButtonData, setDayButtonData] = useState([
-    { list: [{ id: 1, topic: "" }]}]);
+    { list: [{ id: 1, topic: "" }] },
+  ]);
 
+  // day button click changes div classes to visible and sets weekend check to false and sets the day id
   function handleClick(e) {
-    setWeekendCheck(false)
+    setWeekendCheck(false);
     setDayId(e.target.id - 1);
     setToDoClass("todo-container");
     setResourcesClass("resources-container");
   }
 
+  // Adds a list item to the weekend list
   function weekendAddClick(e) {
-    console.log(e.target.dataset.txt)
-    console.log(e.target.id)
+    console.log(e.target.dataset.txt);
+    console.log(e.target.id);
 
-    setWeekendListData([...weekendListData, { id: e.target.id, topic: e.target.dataset.txt }])
+    setWeekendListData([
+      ...weekendListData,
+      { id: e.target.id, topic: e.target.dataset.txt },
+    ]);
 
-    console.log(weekendListData)
+    console.log(weekendListData);
   }
 
+  // weekend button click changes div classes to visible and sets check to true
   function weekendButtonClick() {
     setWeekendCheck(true);
     setToDoClass("todo-container");
     setResourcesClass("resources-container");
-    console.log(weekendCheck)
-    console.log(...weekendListData)
+    console.log(weekendCheck);
+    console.log(...weekendListData);
   }
 
+  // deletes a list item from the weekend list
   function weekendDelete(input) {
-    setWeekendListData(weekendListData.filter((index) => index.id !== input))
+    setWeekendListData(weekendListData.filter((index) => index.id !== input));
   }
 
+  // fetches data from the server based on the week selected from the dropdown
   async function getDayData() {
-    let response = await fetch(`http://localhost:3000/api/v1/1/weeks/${dropdownData}`);
+    let response = await fetch(
+      `http://localhost:3000/api/v1/1/weeks/${dropdownData}`
+    );
     let data = await response.json();
     setDayData(data.payload);
     setDayButtonData(data.payload);
@@ -63,7 +71,6 @@ function App() {
   useEffect(() => {
     getDayData();
   }, [dropdownData]);
-  
 
   return (
     <div className="App">
