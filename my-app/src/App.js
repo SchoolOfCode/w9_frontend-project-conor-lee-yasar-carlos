@@ -73,6 +73,7 @@ function App() {
     getDayData();
   }, [input]);
 
+  
   return (
     <div className="App">
       <NavBar />
