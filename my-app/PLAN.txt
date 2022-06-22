@@ -1,0 +1,26 @@
+import App from "./src/App"
+
+APP 
+    Categories - Id, dayResourceData, dayListData, handleClick
+
+    Weekend-button - weekendButtonClick
+
+    Dropdown - Selected, setSelected, setInput
+
+    Nav-bar
+
+    Todo-list - weekendClick, toDoClass, resourceClass, listData, resourceData, weekendCheck, weekendListData, weekendListDelete
+
+        Resources-list  - resourceData
+            Resources-listitem  - data, link
+
+        Todo-list  -  listData, weekendClick
+            Todo-listitem - weekendClick, listData, id
+                On button click passes listData back up to App.js to be stored in an array
+
+                StarRating
+
+        Weekend-list  -  weekendListData, weekendClick, weekendListDelete
+            Weekend-listitem - weekendClick, listData, weekendListDelete, weekendId
+                Passing weekendId value back to App.js
+                Delete function uses this weekendId to filter and remove from array
