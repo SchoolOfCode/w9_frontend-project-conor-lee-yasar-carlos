@@ -12,6 +12,8 @@ function App() {
   const [dayId, setDayId] = useState(0);
   const [dropdownData, setDropdownData] = useState(1);
   const [weekendCheck, setWeekendCheck] = useState(false);
+  const [input, setInput] = useState(1)
+  const [selected, setSelected] = useState("Choose Week")
 
   const [weekendListData, setWeekendListData] = useState([]);
 
@@ -61,7 +63,7 @@ function App() {
   // fetches data from the server based on the week selected from the dropdown
   async function getDayData() {
     let response = await fetch(
-      `http://localhost:3000/api/v1/1/weeks/${dropdownData}`
+      `http://localhost:3000/api/v1/1/weeks/${input}`
     );
     let data = await response.json();
     setDayData(data.payload);
@@ -70,7 +72,7 @@ function App() {
 
   useEffect(() => {
     getDayData();
-  }, [dropdownData]);
+  }, [input]);
 
   return (
     <div className="App">
@@ -79,7 +81,7 @@ function App() {
       <div className="title-underline"></div>
       <main>
         <div className="categories">
-          <Dropdown input={dropdownData} setDropdownData={setDropdownData} />
+        <Dropdown  selected={selected} setSelected={setSelected} setInput={setInput}/>
           <div className="categories-map">
             {dayButtonData.map((input) => {
               return (
