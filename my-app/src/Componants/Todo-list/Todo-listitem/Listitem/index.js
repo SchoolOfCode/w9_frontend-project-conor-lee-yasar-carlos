@@ -1,5 +1,5 @@
 import React from 'react'
-import  StarRating  from "./Star-rating/Star-rating"
+import  StarRating  from "../Star-rating/Star-rating"
 import { FiPlusCircle } from 'react-icons/fi'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
 import { BsChevronCompactDown } from 'react-icons/bs'

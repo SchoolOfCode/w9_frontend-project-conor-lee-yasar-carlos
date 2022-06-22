@@ -1,25 +1,49 @@
 import React from "react";
-import ListItem from "./Todo-listitem/ListItem";
+import TodoList from "./Todo-List";
+import ResourceList from "./Resources-List";
+import WeekendList from "./Weekend-List";
 
-function Todo({ toDoClass, resourceClass, data, weekendClick }) {
-  return (
-    <div className="todo">
-      <div className={toDoClass}>
-        <div className="h2">
-          <h2>Today's subjects</h2>
+function Todo({
+  toDoClass,
+  resourceClass,
+  listData,
+  resourceData,
+  weekendListData,
+  weekendCheck,
+  weekendClick,
+  weekendListDelete,
+}) {
+  if (weekendCheck === true) {
+    return (
+      <div className="todo">
+        <div className={toDoClass}>
+          <WeekendList
+            weekendListData={weekendListData}
+            weekendListDelete={weekendListDelete}
+            weekendClick={weekendClick}
+          />
         </div>
-        {data.map((input) => {
-          return <ListItem weekendClick={weekendClick} text={input.content} id={input.id} />;
-        })}
-      </div>
-      <div className={resourceClass}>
-        <div className="h2">
-          <h2>Resources</h2>
+        <div className={resourceClass}>
+          <ResourceList
+            resourceData={resourceData}
+          />
         </div>
-        <div className="resource-list-item"></div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="todo">
+        <div className={toDoClass}>
+          <TodoList weekendClick={weekendClick} listData={listData} />
+        </div>
+        <div className={resourceClass}>
+          <ResourceList
+            resourceData={resourceData}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Todo;
