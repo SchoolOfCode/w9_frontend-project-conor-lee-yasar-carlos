@@ -17,7 +17,7 @@ function App() {
   const [weekendListData, setWeekendListData] = useState([]);
 
   const [dayData, setDayData] = useState([
-    { list: [{ id: 1, topic: "" }], resouces: [{ id: 1, topic: "", url: "" }] },
+    { list: [{ id: 1, topic: "" }], resources: [{ id: 1, topic: "", url: "" }] },
   ]);
 
   const [dayButtonData, setDayButtonData] = useState([
@@ -62,7 +62,7 @@ function App() {
   // fetches data from the server based on the week selected from the dropdown
   async function getDayData() {
     let response = await fetch(
-      `http://localhost:3000/api/v1/1/weeks/${input}`
+      `http://localhost:3000/api/v1/1/${input}`
     );
     let data = await response.json();
     setDayData(data.payload);
@@ -89,7 +89,7 @@ function App() {
                 <Categories
                   key={input.day + 1}
                   id={input.day}
-                  dayResourceData={input.resouces}
+                  dayResourceData={input.resources}
                   dayListData={input.list}
                   handleClick={handleClick}
                 />
@@ -105,7 +105,7 @@ function App() {
           toDoClass={toDoClass}
           resourceClass={resourcesClass}
           listData={dayData[dayId].list}
-          resourceData={dayData[dayId].resouces}
+          resourceData={dayData[dayId].resources}
           weekendCheck={weekendCheck}
           weekendListData={weekendListData}
           weekendListDelete={weekendDelete}
