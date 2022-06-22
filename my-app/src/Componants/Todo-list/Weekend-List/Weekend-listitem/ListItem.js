@@ -11,7 +11,7 @@ function WeekendListItem({id, listData, weekendListDelete, weekendId}) {
       <div className='weekend-item-conponent'>
         <div className='weekend-todo-list-item'>
             <div className='todo-list-content'>
-              <p className='list-item-text'>{listData[0].toUpperCase() + listData.substring(1)}</p>
+              <p className='list-item-text'>{listData}</p>
               <div className='icon-box' >    
                 <StarRating />         
               </div>
