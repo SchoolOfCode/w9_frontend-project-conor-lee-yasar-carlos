@@ -346,7 +346,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 48vw;
+  width: 54vw;
   height: 54vh;
   margin: 0 1vw 0 2vw;
   background-color: #ffffff;
@@ -375,6 +375,21 @@ main {
   animation: 0.4s ease 0s normal forwards 1 fadein;
 }
 
+.todo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.weekend-item-conponent {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;
+
+}
+
+
 .h2 {
   display: flex;
   justify-content: center;
@@ -400,6 +415,7 @@ h2 {
 .comlete-list-item {
   display: flex;
   justify-content: center;
+  margin: auto auto;
   margin-top: 2.8vh;
   width: 90%;
  
@@ -437,7 +453,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 70%;
+  max-width: 70%;
+  min-width: 70%;
   height: 7.2vh;
   border-left: 1.5px solid black;
   border-right: 1.5px solid black;
@@ -475,10 +492,10 @@ h2 {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 1.2vw;
+  margin-left: 1vw;
   padding-bottom: 0.6vh;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   font-family: 'Roboto Slab', serif;
   letter-spacing: 1.3px;
@@ -547,10 +564,18 @@ svg {
 
 .resource-list-item {
   display: flex;
-  width: 86%;
+  align-items: flex-end;
+  width: 10vw;
   min-height: 5vh;
+  padding-bottom: 0.8vh;
   background-color: #ffffff;
-  border-bottom: 1px solid #dddcdc;
+  border-bottom: 1px solid #b1afaf;
+  
+}
+
+.resource-list-text {
+  width: 14vw;
+  color: #000000;
 }
 
 h2 {

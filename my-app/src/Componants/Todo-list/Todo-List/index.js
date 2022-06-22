@@ -7,7 +7,7 @@ function TodoList({
   weekendClick,
 }) {
     return (
-        <div>
+        <div className="todo-box">
           <div className="h2">
             <h2>Today's subjects</h2>
           </div>
