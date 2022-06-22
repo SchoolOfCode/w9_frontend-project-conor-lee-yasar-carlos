@@ -21,6 +21,6 @@ APP
                 StarRating
 
         Weekend-list  -  weekendListData, weekendClick, weekendListDelete
-            Weekend-listitem - key, weekendClick, listData, weekendListDelete, weekendId
+            Weekend-listitem - weekendClick, listData, weekendListDelete, weekendId
                 Passing weekendId value back to App.js
                 Delete function uses this weekendId to filter and remove from array
