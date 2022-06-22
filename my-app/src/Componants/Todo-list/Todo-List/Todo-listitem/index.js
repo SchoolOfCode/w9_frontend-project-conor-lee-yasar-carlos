@@ -13,7 +13,7 @@ function ListItem({id, listData, weekendClick}) {
       </div>
       <div className='todo-list-item'>
         <div className='todo-list-content'>
-          <p className='list-item-text'>{listData}</p>
+          <p className='list-item-text'>{listData[0].toUpperCase() + listData.substring(1)}</p>
           <div className='icon-box' >    
             <StarRating />         
           </div>
