@@ -8,10 +8,11 @@ function WeekendList({
   weekendListDelete,
 }) {
     return (
-        <div className="todo-box">
+        <>
           <div className="h2">
             <h2>Today's subjects</h2>
           </div>
+          <div className="weekend-todo-box">
           {weekendListData.map((input) => {
             return (
               <WeekendListItem
@@ -24,6 +25,7 @@ function WeekendList({
             );
           })}
         </div>
+        </>
     );
   }
 

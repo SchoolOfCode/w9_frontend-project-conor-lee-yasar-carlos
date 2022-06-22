@@ -22,7 +22,7 @@ function Todo({
             weekendListDelete={weekendListDelete}
             weekendClick={weekendClick}
           />
-        </div>
+        </div >
         <div className={resourceClass}>
           <ResourceList
             resourceData={resourceData}
