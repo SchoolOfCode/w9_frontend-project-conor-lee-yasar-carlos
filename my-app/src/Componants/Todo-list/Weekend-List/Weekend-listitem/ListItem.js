@@ -4,8 +4,14 @@ import StarRating from '../../Todo-List/StarRating'
 import { BsChevronCompactDown } from 'react-icons/bs'
 
 
-function WeekendListItem({id, listData, weekendListDelete, weekendId}) {
-  console.log(listData)
+function WeekendListItem({
+  id,
+  listData,
+  weekendListDelete,
+  weekendId,
+  weekendRating,
+  updateStarRating
+}) {
   return (
       <>
       <div className='weekend-item-conponent'>
@@ -13,7 +19,7 @@ function WeekendListItem({id, listData, weekendListDelete, weekendId}) {
             <div className='todo-list-content'>
               <p className='list-item-text'>{listData[0].toUpperCase() + listData.substring(1)}</p>
               <div className='icon-box' >    
-                <StarRating />         
+                <StarRating taskRating={weekendRating} taskId={weekendId} updateStarRating={updateStarRating} />         
               </div>
             </div>
             <span className='chevron-icon'><BsChevronCompactDown /></span>

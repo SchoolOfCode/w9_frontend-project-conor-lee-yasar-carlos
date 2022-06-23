@@ -40,7 +40,6 @@ function App() {
     setWeekendCheck(true);
     setToDoClass("todo");
     console.log(weekendCheck);
-    console.log(...weekendListData);
   }
 
   // deletes a list item from the weekend list
@@ -143,7 +142,7 @@ function App() {
           listData={dayData[dayId].list}
           resourceData={dayData[dayId].resources}
           weekendCheck={weekendCheck}
-          weekendListData={weekendListData}
+          weekendListData={dayData}
           weekendListDelete={weekendDelete}
           updateStarRating={updateStarRating}
           updateCompletedTask={updateCompletedTask}
