@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ListItem from "./Todo-listitem";
 
 
@@ -7,7 +7,9 @@ function TodoList({
   weekendClick,
   updateStarRating,
   updateCompletedTask,
+  updateTaskComment
 }) {
+
     return (
         <div className="todo-box">
           <div className="h2">
@@ -25,6 +27,8 @@ function TodoList({
                 id={task.id}
                 updateStarRating={updateStarRating}
                 updateCompletedTask={updateCompletedTask}
+                updateTaskComment={updateTaskComment}
+                taskComment={task.comment}
               />
             );
           })}

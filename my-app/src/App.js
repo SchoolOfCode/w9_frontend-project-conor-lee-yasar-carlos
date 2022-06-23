@@ -95,6 +95,20 @@ function App() {
     })
   }
 
+  // update the comment made for a specific task to the state
+  function updateTaskComment({taskId, comment}) {
+    let found = false;
+    dayData.forEach(day => {
+      day.list.forEach((task, index) => {
+        if (task.id === taskId) {
+          setDayData(() => [...dayData.slice(0, day.day - 1), {...day, list: [...day.list.slice(0, index), {...task, comment: comment}, ...day.list.slice(index + 1)]}, ...dayData.slice(day.day)])
+          found = true;
+          return
+        }
+      })
+      if (found) {return}
+    })
+  }
 
   // fetches data from the server based on the week selected from the dropdown
   async function getDayData() {
@@ -146,6 +160,7 @@ function App() {
           weekendListDelete={weekendDelete}
           updateStarRating={updateStarRating}
           updateCompletedTask={updateCompletedTask}
+          updateTaskComment={updateTaskComment}
         />
       </main>
     </div>

@@ -14,9 +14,23 @@ function ListItem({
   weekendClick,
   updateStarRating,
   updateCompletedTask,
+  taskComment,
+  updateTaskComment
 }) {
-
   const [active, setActive] = useState(false);
+
+  // dont think it is good practice but have used the external state to update this internal one
+  const [comment, setComment] = useState(taskComment)
+
+  // keep the comment in a state
+  function handleComment(e) {
+    setComment(e.target.value);
+  }
+
+  // this will call the function in charge of updating the app state for the task
+  function handleCommentClick(taskId) {
+    updateTaskComment({taskId: id, comment: comment});
+  }
 
   // prep data when weekend button is clicked
   function handleWeekendClick(e) {
@@ -28,8 +42,6 @@ function ListItem({
       weekendClick(taskInfo);
     }
   }
-
-  
 
   return (
     <>
@@ -67,8 +79,8 @@ function ListItem({
       </button>
     </div>
     <div className={active ? "accordion" : "default-invis-accordion" }>
-      <input></input>
-      <button className="accordion-button">Submit</button>
+      <input onChange={handleComment} value={comment} />
+      <button className="accordion-button" onClick={handleCommentClick}>Submit</button>
     </div>
     </>
   );
