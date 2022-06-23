@@ -3,30 +3,24 @@ import WeekendListItem from "./Weekend-listitem/ListItem";
 
 
 function WeekendList({
-  weekendListData,
+  weekendTaskData,
   weekendClick,
   weekendListDelete,
+  updateStarRating
 }) {
     return (
-        <>
-          <div className="h2">
-            <h2>Today's subjects</h2>
-          </div>
-          <div className="weekend-todo-box">
-          {weekendListData.map((input) => {
-            return (
-              <WeekendListItem
-                key={input.id}
-                weekendClick={weekendClick}
-                listData={input.topic}
-                weekendListDelete={weekendListDelete}
-                weekendId={input.id}
-              />
-            );
-          })}
-        </div>
-        </>
-    );
+      <div className="weekend-todo-box">
+        <WeekendListItem
+          key={weekendTaskData.id}
+          weekendClick={weekendClick}
+          listData={weekendTaskData.topic}
+          weekendListDelete={weekendListDelete}
+          weekendId={weekendTaskData.id}
+          weekendRating={weekendTaskData.rating}
+          updateStarRating={updateStarRating}
+        />
+      </div>
+    )
   }
 
 export default WeekendList;

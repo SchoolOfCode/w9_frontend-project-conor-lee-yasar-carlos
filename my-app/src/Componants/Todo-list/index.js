@@ -16,14 +16,32 @@ function Todo({
   updateCompletedTask,
 }) {
   if (weekendCheck === true) {
+    // loop through the whole weeks tasks to get the ones marked for weekend study
+    const weekendTasks = [];
+    weekendListData.forEach(function(day) {
+      day.list.forEach(function(task){
+        if (task.weekend === true) {
+          weekendTasks.push(task);
+        }
+      })
+    });
+
     return (
       <div className={toDoClass}>
         <div className="todo-container">
-          <WeekendList
-            weekendListData={weekendListData}
-            weekendListDelete={weekendListDelete}
-            weekendClick={weekendClick}
-          />
+          <div className="h2">
+            <h2>Today's subjects</h2>
+          </div>
+          {
+            weekendTasks.map(task => (
+              <WeekendList
+                weekendTaskData={task}
+                weekendListDelete={weekendListDelete}
+                weekendClick={weekendClick}
+                updateStarRating={updateStarRating}
+              />
+            ))
+          }
         </div>
         <div className="resources-container">
           <ResourceList
@@ -36,7 +54,12 @@ function Todo({
     return (
       <div className={toDoClass}>
         <div className="todo-container">
-          <TodoList weekendClick={weekendClick} listData={listData} updateStarRating={updateStarRating} updateCompletedTask={updateCompletedTask} />
+          <TodoList 
+            weekendClick={weekendClick}
+            listData={listData}
+            updateStarRating={updateStarRating}
+            updateCompletedTask={updateCompletedTask}
+          />
         </div>
         <div className="resources-container">
           <ResourceList
