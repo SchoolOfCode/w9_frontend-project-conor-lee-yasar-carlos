@@ -29,17 +29,13 @@ function App() {
   }
 
   // Adds a list item to the weekend list
-  function weekendAddClick(e) {
-    console.log(e.target.dataset.txt);
-    console.log(e.target.id);
-
-    e.currentTarget.disabled = true;
+  function weekendAddClick({taskId, topic}) {
+    console.log("ADDING WEKEEND", taskId)
     setWeekendListData([
       ...weekendListData,
-      { id: e.target.id, topic: e.target.dataset.txt },
+      { id: taskId, topic: topic },
     ]);
-
-    console.log(weekendListData);
+    updateWeekendTask(taskId)
   }
 
   // weekend button click changes div classes to visible and sets check to true
@@ -63,6 +59,22 @@ function App() {
       day.list.forEach((task, index) => {
         if (task.id === taskId) {
           setDayData(() => [...dayData.slice(0, day.day - 1), {...day, list: [...day.list.slice(0, index), {...task, rating: rating}, ...day.list.slice(index + 1)]}, ...dayData.slice(day.day)])
+          found = true;
+          return
+        }
+      })
+      if (found) {return}
+    })
+  }
+
+  // update if a task in the weekend
+  // takes in the task id and toogles the weekend from true to false
+  function updateWeekendTask(taskId) {
+    let found = false;
+    dayData.forEach(day => {
+      day.list.forEach((task, index) => {
+        if (task.id === taskId) {
+          setDayData(() => [...dayData.slice(0, day.day - 1), {...day, list: [...day.list.slice(0, index), {...task, weekend: !task.weekend}, ...day.list.slice(index + 1)]}, ...dayData.slice(day.day)])
           found = true;
           return
         }

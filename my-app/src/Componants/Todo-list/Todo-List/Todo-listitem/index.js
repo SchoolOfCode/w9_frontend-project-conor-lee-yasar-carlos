@@ -6,6 +6,16 @@ import { BsChevronCompactDown } from 'react-icons/bs'
 
 
 function ListItem({id, taskName, weekend, completed, rating, weekendClick, updateStarRating}) {
+  // prep data when weekend button is clicked
+  function handleWeekendClick(e) {
+    if (!weekend) {
+      const taskInfo = {
+        taskId: id,
+        topic: e.currentTarget.dataset.txt,
+      }
+      weekendClick(taskInfo);
+    }
+  }
   return (
     <div className='comlete-list-item'>
       <div className='completed'>
@@ -20,8 +30,8 @@ function ListItem({id, taskName, weekend, completed, rating, weekendClick, updat
         </div>
         <span className='chevron-icon'><BsChevronCompactDown /></span>
       </div>
-      <button className='add-to-weekend' id={id} data-txt={taskName} onClick={weekendClick}>
-          <span className='plus-icon'><FiPlusCircle  id={id} data-txt={taskName} onClick={weekendClick}/></span>
+      <button className='add-to-weekend' id={id} data-txt={taskName} onClick={handleWeekendClick}>
+          <span className='plus-icon'><FiPlusCircle  id={id} data-txt={taskName} /></span>
       </button>
     </div>
     
