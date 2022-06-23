@@ -39,7 +39,7 @@ function ListItem({
           <AiOutlineCheckCircle id={id} />
         </span>
       </button>
-      <div className="todo-list-item" onClick={() => {active ? setActive(false) : setActive(true)}} style={{ backgroundColor: completed ? "grey" : "" }} >
+      <div className="todo-list-item" style={{ backgroundColor: completed ? "grey" : "" }} >
         <div className="todo-list-content"  >
           <p className="list-item-text">{taskName}</p>
           <div className="icon-box">
@@ -51,7 +51,7 @@ function ListItem({
           </div>
         </div>
         <span className="chevron-icon">
-          <BsChevronCompactDown />
+          <BsChevronCompactDown onClick={() => {active ? setActive(false) : setActive(true)}} />
         </span>
       </div>
       <button 
