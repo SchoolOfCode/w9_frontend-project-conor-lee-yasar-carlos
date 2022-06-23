@@ -6,6 +6,7 @@ function TodoList({
   listData,
   weekendClick,
   updateStarRating,
+  updateCompletedTask
 }) {
     return (
         <div className="todo-box">
@@ -23,6 +24,7 @@ function TodoList({
                 rating={task.rating}
                 id={task.id}
                 updateStarRating={updateStarRating}
+                updateCompletedTask={updateCompletedTask}
               />
             );
           })}

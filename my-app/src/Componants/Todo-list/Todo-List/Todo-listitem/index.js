@@ -13,9 +13,10 @@ function ListItem({
   rating,
   weekendClick,
   updateStarRating,
+  updateCompletedTask
 }) {
 
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
 
   // prep data when weekend button is clicked
   function handleWeekendClick(e) {
@@ -28,14 +29,16 @@ function ListItem({
     }
   }
 
+  
+
   return (
     <div className="comlete-list-item">
-      <button className="completed" onClick={() => setActive(!active)} id={id}>
+      <button className="completed" onClick={() => updateCompletedTask(id)} id={id}>
         <span className="tick-icon">
           <AiOutlineCheckCircle id={id} />
         </span>
       </button>
-      <div className="todo-list-item" style={{ backgroundColor: active ? "grey" : "" }} >
+      <div className="todo-list-item" style={{ backgroundColor: completed ? "grey" : "" }} >
         <div className="todo-list-content"  >
           <p className="list-item-text">{taskName}</p>
           <div className="icon-box">
@@ -55,7 +58,7 @@ function ListItem({
         id={id}
         data-txt={taskName}
         onClick={handleWeekendClick}
-        disabled={active}
+        disabled={completed}
        >
           <span className='plus-icon'>
             <FiPlusCircle  id={id} data-txt={taskName} />
