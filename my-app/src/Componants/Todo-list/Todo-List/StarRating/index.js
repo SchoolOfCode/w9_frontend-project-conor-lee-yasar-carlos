@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
 
-const StarRating = () => {
-  const [rating, setRating] = useState(0);
+
+// comment
+function StarRating({ taskRating, updateStarRating, taskId }) {
+  const [rating, setRating] = useState(taskRating);
   const [hover, setHover] = useState(0);
-  console.log(rating)
   return (
     <div className="star-rating">
       {[...Array(5)].map((star, index) => {
@@ -14,7 +15,10 @@ const StarRating = () => {
             type="button"
             key={index}
             className={index <= (hover || rating) ? "on" : "off"}
-            onClick={() => setRating(index)}
+            onClick={() => {
+              setRating(index);
+              updateStarRating({ rating: index, taskId: taskId });
+            }}
             onMouseEnter={() => setHover(index)}
             onMouseLeave={() => setHover(rating)}
           >

@@ -17,11 +17,7 @@ function App() {
   const [weekendListData, setWeekendListData] = useState([]);
 
   const [dayData, setDayData] = useState([
-    { list: [{ id: 1, topic: "" }], resources: [{ id: 1, topic: "", url: "" }] },
-  ]);
-
-  const [dayButtonData, setDayButtonData] = useState([
-    { list: [{ id: 1, topic: "" }] },
+    { list: [{ id: 1, topic: "" }], resources: [{ id: 1, topic: "", url: "", rating: 2 }] },
   ]);
 
   // day button click changes div classes to visible and sets weekend check to false and sets the day id
@@ -59,6 +55,21 @@ function App() {
     setWeekendListData(weekendListData.filter((index) => index.id !== input));
   }
 
+  // update the star rating of a task
+  function updateStarRating({rating, taskId}) {
+    let found = false;
+    dayData.forEach(day => {
+      day.list.forEach((task, index) => {
+        if (task.id === taskId) {
+          setDayData(() => [...dayData.slice(0, day.day - 1), {...day, list: [...day.list.slice(0, index), {...task, rating: rating}, ...day.list.slice(index + 1)]}, ...dayData.slice(day.day)])
+          found = true;
+          return
+        }
+      })
+      if (found) {return}
+    })
+  }
+
   // fetches data from the server based on the week selected from the dropdown
   async function getDayData() {
     let response = await fetch(
@@ -66,7 +77,6 @@ function App() {
     );
     let data = await response.json();
     setDayData(data.payload);
-    setDayButtonData(data.payload);
   }
 
   useEffect(() => {
@@ -85,7 +95,7 @@ function App() {
         <div className="categories">
         <Dropdown  selected={selected} setSelected={setSelected} setInput={setInput}/>
           <div className="categories-map">
-            {dayButtonData.map((input) => {
+            {dayData.map((input) => {
               return (
                 <Categories
                   key={input.day + 1}
@@ -110,6 +120,7 @@ function App() {
           weekendCheck={weekendCheck}
           weekendListData={weekendListData}
           weekendListDelete={weekendDelete}
+          updateStarRating={updateStarRating}
         />
       </main>
     </div>

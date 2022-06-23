@@ -5,19 +5,24 @@ import ListItem from "./Todo-listitem";
 function TodoList({
   listData,
   weekendClick,
+  updateStarRating
 }) {
     return (
         <div className="todo-box">
           <div className="h2">
             <h2>Today's subjects</h2>
           </div>
-          {listData.map((input) => {
+          {listData.map((task) => {
             return (
               <ListItem
-                key={input.id}
+                key={task.id}
                 weekendClick={weekendClick}
-                listData={input.topic}
-                id={input.id}
+                taskName={task.topic}
+                weekend={task.weekend}
+                completed={task.completed}
+                rating={task.rating}
+                id={task.id}
+                updateStarRating={updateStarRating}
               />
             );
           })}
