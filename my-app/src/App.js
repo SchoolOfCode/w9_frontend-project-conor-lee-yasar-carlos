@@ -33,6 +33,7 @@ function App() {
     console.log(e.target.dataset.txt);
     console.log(e.target.id);
 
+    e.currentTarget.disabled = true;
     setWeekendListData([
       ...weekendListData,
       { id: e.target.id, topic: e.target.dataset.txt },

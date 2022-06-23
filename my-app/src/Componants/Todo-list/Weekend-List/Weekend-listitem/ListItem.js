@@ -18,9 +18,9 @@ function WeekendListItem({id, listData, weekendListDelete, weekendId}) {
             </div>
             <span className='chevron-icon'><BsChevronCompactDown /></span>
         </div>
-        <div className='add-to-weekend' data-txt={listData} onClick={() => {weekendListDelete(weekendId)}}>
+        <button className='add-to-weekend' data-txt={listData} onClick={() => {weekendListDelete(weekendId)}}>
             <span className='weekend-cross-icon'><TiDeleteOutline id={id} data-txt={listData} onClick={() => {weekendListDelete(weekendId)}} /></span>
-        </div>
+        </button>
       </div>
     </>
     

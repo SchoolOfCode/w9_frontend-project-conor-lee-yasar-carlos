@@ -20,9 +20,9 @@ function ListItem({id, taskName, weekend, completed, rating, weekendClick, updat
         </div>
         <span className='chevron-icon'><BsChevronCompactDown /></span>
       </div>
-      <div className='add-to-weekend' id={id} data-txt={taskName} onClick={weekendClick}>
+      <button className='add-to-weekend' id={id} data-txt={taskName} onClick={weekendClick}>
           <span className='plus-icon'><FiPlusCircle  id={id} data-txt={taskName} onClick={weekendClick}/></span>
-      </div>
+      </button>
     </div>
     
   )
