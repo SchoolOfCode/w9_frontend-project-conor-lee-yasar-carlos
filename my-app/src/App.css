@@ -380,6 +380,7 @@ main {
 .todo-box {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
 }
@@ -516,10 +517,44 @@ h2 {
 } */
 
 .accordion {
-  max-width: 70%;
-  min-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 63%;
+  min-width: 63%;
+  min-height: 12vh;
   height: 8vh;
   background-color: #4b4a4a;
+  border-radius: 0 0 12px 12px;
+  border: 2px solid black;
+  background-color: #f7f3f3;
+  box-shadow: 4px 4px 1.6px 0px rgba(29, 29, 29, 0.75);
+  margin-top: 0;
+}
+
+input {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 7.6vh;
+  width: 100%;
+  margin-top: 0;
+  overflow: hidden;
+  word-wrap: normal;
+  border: none;
+  background-color: #f7f3f3;
+
+}
+
+.accordion-button {
+  width: 3.6vw;
+  height: 2.2vh;
+  margin: auto 1vw auto 0;
+  border: 1px solid rgb(119, 119, 119);
+  box-shadow: 4px 4px 1.6px 0px rgba(29, 29, 29, 0.75);
+  background-color: #adadad;
+  color: white;
+  
+
 }
 
 .weekend-todo-list-item {
@@ -644,11 +679,11 @@ h2 {
   font-size: 16px;
 }
 
-input {
+/* input {
   margin-top: 3vh;
   margin-bottom: 3vh;
   height: 3vh;
-}
+} */
 
 .category-button-container {
   display: flex;

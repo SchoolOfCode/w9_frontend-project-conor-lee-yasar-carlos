@@ -32,6 +32,7 @@ function ListItem({
   
 
   return (
+    <>
     <div className="comlete-list-item">
       <button className="completed" onClick={() => updateCompletedTask(id)} id={id}>
         <span className="tick-icon">
@@ -65,6 +66,11 @@ function ListItem({
           </span>
       </button>
     </div>
+    <div className="accordion">
+      <input></input>
+      <button className="accordion-button">Submit</button>
+    </div>
+    </>
   );
 }
 
