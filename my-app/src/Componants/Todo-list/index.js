@@ -13,6 +13,7 @@ function Todo({
   weekendClick,
   weekendListDelete,
   updateStarRating,
+  updateCompletedTask
 }) {
   if (weekendCheck === true) {
     return (
@@ -35,7 +36,7 @@ function Todo({
     return (
       <div className={toDoClass}>
         <div className="todo-container">
-          <TodoList weekendClick={weekendClick} listData={listData} updateStarRating={updateStarRating} />
+          <TodoList weekendClick={weekendClick} listData={listData} updateStarRating={updateStarRating} updateCompletedTask={updateCompletedTask} />
         </div>
         <div className="resources-container">
           <ResourceList
