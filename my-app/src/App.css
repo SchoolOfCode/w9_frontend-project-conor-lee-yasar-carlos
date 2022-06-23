@@ -839,3 +839,9 @@ button {
   height: 3vh;
   width: 3vw;
 }
+
+
+.image-visibility {
+  width: 0vw;
+  height: 0vh;
+}

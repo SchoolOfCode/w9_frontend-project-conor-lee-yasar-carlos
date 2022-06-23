@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NavBar() {
+function NavBar({hideImage, logIn}) {
   return (
     <nav >
       <div className='nav-left'>
@@ -15,7 +15,7 @@ function NavBar() {
           <li>Graduates</li>
           <li>Careers</li>
           <li>Blog</li>
-          <button className='nav-button'>Log out</button> 
+          <button className='nav-button' onClick={hideImage}>{logIn}</button> 
         </ul>   
       </div>
 

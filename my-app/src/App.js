@@ -12,12 +12,24 @@ function App() {
   const [weekendCheck, setWeekendCheck] = useState(false);
   const [input, setInput] = useState(1)
   const [selected, setSelected] = useState("Choose Week")
+  const [imageVisibility, setImageVisibility] = useState("")
+  const [logIn, setLogIn] = useState("Log In");
 
   const [weekendListData, setWeekendListData] = useState([]);
 
   const [dayData, setDayData] = useState([
     { list: [{ id: 1, topic: "" }], resources: [{ id: 1, topic: "", url: "", rating: 2 }] },
   ]);
+
+  function hideImage() {
+    if (logIn === "Log Out") {
+      setImageVisibility("")
+      setLogIn("Log In")
+    } else {
+    setImageVisibility("image-visibility")
+    setLogIn("Log Out")
+    }
+  }
 
   // day button click changes div classes to visible and sets weekend check to false and sets the day id
   function handleClick(e) {
@@ -112,7 +124,8 @@ function App() {
   
   return (
     <div className="App">
-      <NavBar />
+      <NavBar logIn={logIn} hideImage={hideImage}/>
+      <img className={imageVisibility} src="https://puu.sh/J7zIq/efe0cf5dad.png" alt="" />
       <h1>Bootcamper Organiser</h1>
       <div className="title-underline"></div>
       <main>

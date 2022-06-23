@@ -4,7 +4,7 @@ import React from 'react'
 function ResourceItem({data, link}) {
   return (
     <div className='resource-list-item'>
-      <a href={link} className="resource-list-text">{data}</a>
+      <a target="_blank" href={link} className="resource-list-text">{data}</a>
     </div>
   )
 }
