@@ -13,10 +13,10 @@ function ListItem({
   rating,
   weekendClick,
   updateStarRating,
-  updateCompletedTask
+  updateCompletedTask,
 }) {
 
-  // const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
 
   // prep data when weekend button is clicked
   function handleWeekendClick(e) {
@@ -39,7 +39,7 @@ function ListItem({
           <AiOutlineCheckCircle id={id} />
         </span>
       </button>
-      <div className="todo-list-item" style={{ backgroundColor: completed ? "grey" : "" }} >
+      <div className="todo-list-item" onClick={() => {active ? setActive(false) : setActive(true)}} style={{ backgroundColor: completed ? "grey" : "" }} >
         <div className="todo-list-content"  >
           <p className="list-item-text">{taskName}</p>
           <div className="icon-box">
@@ -66,7 +66,7 @@ function ListItem({
           </span>
       </button>
     </div>
-    <div className="accordion">
+    <div className={active ? "accordion" : "default-invis-accordion" }>
       <input></input>
       <button className="accordion-button">Submit</button>
     </div>

@@ -13,7 +13,7 @@ function Todo({
   weekendClick,
   weekendListDelete,
   updateStarRating,
-  updateCompletedTask
+  updateCompletedTask,
 }) {
   if (weekendCheck === true) {
     return (

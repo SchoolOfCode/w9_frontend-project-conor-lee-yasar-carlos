@@ -96,6 +96,7 @@ function App() {
     })
   }
 
+
   // fetches data from the server based on the week selected from the dropdown
   async function getDayData() {
     let response = await fetch(
