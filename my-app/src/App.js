@@ -30,7 +30,6 @@ function App() {
 
   // Adds a list item to the weekend list
   function weekendAddClick({taskId, topic}) {
-    console.log("ADDING WEKEEND", taskId)
     setWeekendListData([
       ...weekendListData,
       { id: taskId, topic: topic },
@@ -48,8 +47,9 @@ function App() {
   }
 
   // deletes a list item from the weekend list
-  function weekendDelete(input) {
-    setWeekendListData(weekendListData.filter((index) => index.id !== input));
+  function weekendDelete(weekendId) {
+    setWeekendListData(weekendListData.filter((index) => index.id !== weekendId));
+    updateWeekendTask(weekendId)
   }
 
   // update the star rating of a task
