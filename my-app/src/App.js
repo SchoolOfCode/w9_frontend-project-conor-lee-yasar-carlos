@@ -7,7 +7,7 @@ import Dropdown from "./Componants/Catergories/Dropdown";
 import WeekendButton from "./Componants/Catergories/Weekend-button";
 
 function App() {
-  const [toDoClass, setToDoClass] = useState("default-invis");
+  const [toDoClass, setToDoClass] = useState("hidden");
   const [dayId, setDayId] = useState(0);
   const [weekendCheck, setWeekendCheck] = useState(false);
   const [input, setInput] = useState(1)
@@ -23,7 +23,7 @@ function App() {
   function handleClick(e) {
     setWeekendCheck(false);
     setDayId(e.target.id - 1);
-    setToDoClass("todo");
+    setToDoClass("visible");
   }
 
   // Adds a list item to the weekend list
@@ -38,7 +38,7 @@ function App() {
   // weekend button click changes div classes to visible and sets check to true
   function weekendButtonClick() {
     setWeekendCheck(true);
-    setToDoClass("todo");
+    setToDoClass("visible");
     console.log(weekendCheck);
   }
 

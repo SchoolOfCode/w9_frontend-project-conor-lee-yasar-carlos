@@ -342,6 +342,7 @@ main {
   -webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
   animation: 0.5s ease 0s normal forwards 1 fadein;
   box-shadow: inset 5px 5px 11px -4px #000000;
+  visibility: hidden;
 }
 
 .todo-container {

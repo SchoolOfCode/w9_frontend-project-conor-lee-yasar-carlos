@@ -5,7 +5,6 @@ import WeekendList from "./Weekend-List";
 
 function Todo({
   toDoClass,
-  resourceClass,
   listData,
   resourceData,
   weekendListData,
@@ -27,7 +26,7 @@ function Todo({
     });
 
     return (
-      <div className={toDoClass}>
+      <div className="todo" style={{visibility: toDoClass }}>
         <div className="todo-container">
           <div className="h2">
             <h2>Today's subjects</h2>
@@ -52,7 +51,7 @@ function Todo({
     );
   } else {
     return (
-      <div className={toDoClass}>
+      <div className="todo" style={{visibility: toDoClass}}>
         <div className="todo-container">
           <TodoList 
             weekendClick={weekendClick}
