@@ -339,8 +339,8 @@ main {
   background-color: #f7f3f3;
   border: 1px solid rgb(119, 119, 119);
   border-radius: 12px;
-  -webkit-animation: 2.8s ease 0s normal forwards 1 fadein;
-  animation: 2.8s ease 0s normal forwards 1 fadein;
+  -webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
+  animation: 0.5s ease 0s normal forwards 1 fadein;
   box-shadow: inset 5px 5px 11px -4px #000000;
 }
 
@@ -473,12 +473,12 @@ h2 {
   border-left: 1.5px solid black;
   border-right: 1.5px solid black;
   background-color: #31986a;
-  background-image:
+  /* background-image:
     linear-gradient(
       to right, 
       #31986a, #5ed6a0
     );
-  
+   */
   box-shadow: 4px 4px 1.6px 0px rgba(29, 29, 29, 0.75);
   
 }
@@ -504,7 +504,7 @@ h2 {
   
 }
 
-.todo-list-item:hover {
+/* .todo-list-item:hover {
   
   background-color: #31986a;
   background-image:
@@ -513,6 +513,13 @@ h2 {
       #29815a, #54c290
     );
    
+} */
+
+.accordion {
+  max-width: 70%;
+  min-width: 70%;
+  height: 8vh;
+  background-color: #4b4a4a;
 }
 
 .weekend-todo-list-item {
