@@ -17,6 +17,17 @@ function ListItem({
 
   const [active, setActive] = useState(false);
 
+  // prep data when weekend button is clicked
+  function handleWeekendClick(e) {
+    if (!weekend) {
+      const taskInfo = {
+        taskId: id,
+        topic: e.currentTarget.dataset.txt,
+      }
+      weekendClick(taskInfo);
+    }
+  }
+
   return (
     <div className="comlete-list-item">
       <button className="completed" onClick={() => setActive(!active)} id={id}>
@@ -39,16 +50,16 @@ function ListItem({
           <BsChevronCompactDown />
         </span>
       </div>
-      <button
-        className="add-to-weekend"
+      <button 
+        className='add-to-weekend'
         id={id}
         data-txt={taskName}
-        onClick={weekendClick}
+        onClick={handleWeekendClick}
         disabled={active}
-      >
-        <span className="plus-icon">
-          <FiPlusCircle id={id} data-txt={taskName} onClick={weekendClick} />
-        </span>
+       >
+          <span className='plus-icon'>
+            <FiPlusCircle  id={id} data-txt={taskName} />
+          </span>
       </button>
     </div>
   );
