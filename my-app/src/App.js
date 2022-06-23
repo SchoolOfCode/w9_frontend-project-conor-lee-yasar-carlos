@@ -8,7 +8,6 @@ import WeekendButton from "./Componants/Catergories/Weekend-button";
 
 function App() {
   const [toDoClass, setToDoClass] = useState("default-invis");
-  const [resourcesClass, setResourcesClass] = useState("default-invis");
   const [dayId, setDayId] = useState(0);
   const [weekendCheck, setWeekendCheck] = useState(false);
   const [input, setInput] = useState(1)
@@ -24,8 +23,7 @@ function App() {
   function handleClick(e) {
     setWeekendCheck(false);
     setDayId(e.target.id - 1);
-    setToDoClass("todo-container");
-    setResourcesClass("resources-container");
+    setToDoClass("todo");
   }
 
   // Adds a list item to the weekend list
@@ -40,8 +38,7 @@ function App() {
   // weekend button click changes div classes to visible and sets check to true
   function weekendButtonClick() {
     setWeekendCheck(true);
-    setToDoClass("todo-container");
-    setResourcesClass("resources-container");
+    setToDoClass("todo");
     console.log(weekendCheck);
     console.log(...weekendListData);
   }
@@ -51,6 +48,7 @@ function App() {
     setWeekendListData(weekendListData.filter((index) => index.id !== weekendId));
     updateWeekendTask(weekendId)
   }
+
 
   // update the star rating of a task
   function updateStarRating({rating, taskId}) {
@@ -127,7 +125,6 @@ function App() {
         <Todo
           weekendClick={weekendAddClick}
           toDoClass={toDoClass}
-          resourceClass={resourcesClass}
           listData={dayData[dayId].list}
           resourceData={dayData[dayId].resources}
           weekendCheck={weekendCheck}
