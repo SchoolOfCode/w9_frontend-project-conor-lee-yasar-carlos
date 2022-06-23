@@ -126,7 +126,6 @@ function App() {
                 <Categories
                   key={input.day + 1}
                   id={input.day}
-                  dayResourceData={input.resources}
                   dayListData={input.list}
                   handleClick={handleClick}
                 />
