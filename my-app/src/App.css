@@ -483,6 +483,27 @@ h2 {
   
 }
 
+.completed-todo-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 70%;
+  min-width: 70%;
+  height: 7.2vh;
+  border-left: 1.5px solid black;
+  border-right: 1.5px solid black;
+  background-color: #31986a;
+  background-image:
+    linear-gradient(
+      to right, 
+      #979797, #d4d4d4
+    );
+  
+  box-shadow: 4px 4px 1.6px 0px rgba(29, 29, 29, 0.75);
+  
+}
+
 .todo-list-item:hover {
   
   background-color: #31986a;
