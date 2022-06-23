@@ -13,6 +13,7 @@ function Todo({
   weekendListDelete,
   updateStarRating,
   updateCompletedTask,
+  updateTaskComment
 }) {
   if (weekendCheck === true) {
     // loop through the whole weeks tasks to get the ones marked for weekend study
@@ -38,6 +39,7 @@ function Todo({
                 weekendListDelete={weekendListDelete}
                 weekendClick={weekendClick}
                 updateStarRating={updateStarRating}
+                updateTaskComment={updateTaskComment}
               />
             ))
           }
@@ -58,6 +60,7 @@ function Todo({
             listData={listData}
             updateStarRating={updateStarRating}
             updateCompletedTask={updateCompletedTask}
+            updateTaskComment={updateTaskComment}
           />
         </div>
         <div className="resources-container">
