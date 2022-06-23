@@ -427,6 +427,13 @@ h2 {
  
 }
 
+.default-invis-accordion {
+  display: flex;
+  height: 0vh;
+  visibility: hidden;
+ 
+}
+
 .comlete-list-item {
   display: flex;
   justify-content: center;
