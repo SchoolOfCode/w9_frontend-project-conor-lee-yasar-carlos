@@ -247,11 +247,11 @@ main {
   width: 12vw;
   height: 4vh;
   margin-bottom: 2.4vh;
-  background-color: #adadad;
+  background-color: #34bb7c;
   background-image:
   linear-gradient(
     to right, 
-    #b1b0b0, #c9c7c7
+    #34bb7c, #5fcf9b
   );
   color: #ffffff;
   border: 1px solid rgb(119, 119, 119);
@@ -289,35 +289,35 @@ main {
 }
 
 .dropdown-item:nth-child(4n + 2) {
-  background-color: #cecece;
+  background-color: #34bb7c;
   background-image:
   linear-gradient(
     to right, 
-    #b8b8b8, #dfdede
+    #34bb7c, #5fcf9b
   );
 }
 .dropdown-item:nth-child(4n + 1) {
-  background-color: #beb8b8;
+  background-color: #34bb7c;
   background-image:
   linear-gradient(
     to right, 
-    #9c9a9a, #d3d3d3
+    #7dc4a3, #99cab3
   );
 }
 .dropdown-item:nth-child(4n + 3) {
-  background-color: #a8a1a1;
+  background-color: #34bb7c;
   background-image:
   linear-gradient(
     to right, 
-    #968f8f, #c4bebe
+    #52b896, #7ebea9
   );
 }
 .dropdown-item:nth-child(4n + 4) {
-  background-color: #c2c2c2;
+  background-color: #34bb7c;
   background-image:
   linear-gradient(
     to right, 
-    #b4b4b4, #ddd9d9
+    #5a9479, #79a892
   );
 }
 
