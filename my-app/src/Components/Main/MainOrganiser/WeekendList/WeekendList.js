@@ -11,7 +11,6 @@ function WeekendList({
     return (
       <div className="weekend-todo-box">
         <WeekendListItem
-          key={weekendTaskData.id}
           weekendClick={weekendClick}
           listData={weekendTaskData.topic}
           weekendListDelete={weekendListDelete}

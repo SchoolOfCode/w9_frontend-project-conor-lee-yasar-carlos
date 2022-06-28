@@ -32,8 +32,9 @@ function MainOrganiser({
             <h2>Today's subjects</h2>
           </div>
           {
-            weekendTasks.map(task => (
+            weekendTasks.map((task, index) => (
               <WeekendList
+                key={index}
                 weekendTaskData={task}
                 weekendListDelete={weekendListDelete}
                 weekendClick={weekendClick}
