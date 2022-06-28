@@ -1,6 +1,11 @@
 import React from 'react'
 import { BsFillStarFill } from 'react-icons/bs'
 
+
+// Props:
+// id is the id for the day
+// handleClick is used to update the tasks the state of current day number being displayed
+// dayData the data for the day
 function DayButton({id, handleClick, dayData}) {
   
   // work out the average for the day according to the days tasks rating
