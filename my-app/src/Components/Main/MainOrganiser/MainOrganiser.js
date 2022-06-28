@@ -14,8 +14,10 @@ function MainOrganiser({
   updateCompletedTask,
   updateTaskComment
 }) {
+
+  // when requesting the weekend tasks
   if (weekendCheck === true) {
-    // loop through the whole weeks tasks to get the ones marked for weekend study
+    // create a list of just weekend items
     const weekendTasks = [];
     weekendListData.forEach(function(day) {
       day.list.forEach(function(task){
@@ -25,6 +27,7 @@ function MainOrganiser({
       })
     });
 
+    // check if we are rendering the weekend or day tasks
     return (
       <div className="todo" style={{visibility: mainOrganiserClass }}>
         <div className="todo-container">
