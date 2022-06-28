@@ -1,5 +1,5 @@
 import React from "react";
-import ResourceItem from "./Resources-listitem";
+import ResourceItem from "./ResourceItem/ResourceItem";
 
 function ResourceList({
   resourceData,

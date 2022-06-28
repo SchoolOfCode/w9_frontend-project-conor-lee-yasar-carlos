@@ -1,6 +1,6 @@
 import React from 'react'
 import { TiDeleteOutline} from 'react-icons/ti'
-import StarRating from '../../Todo-List/StarRating'
+import StarRating from '../../ScheduleList/StarRating/StarRating'
 import { BsChevronCompactDown } from 'react-icons/bs'
 
 

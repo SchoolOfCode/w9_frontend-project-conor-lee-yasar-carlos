@@ -1,7 +1,7 @@
 import React from "react";
 import DayButton from "./DayButton/DayButton";
 import Dropdown from "./Dropdown/Dropdown";
-import WeekendButton from "./Weekend-button";
+import WeekendButton from "./WeekendButton/WeekendButton";
 
 function Categories({ dayData, handleClick, updateWeekNumber, weekendButtonClick }) {
   // work out the average for the day according to the tasks rating
