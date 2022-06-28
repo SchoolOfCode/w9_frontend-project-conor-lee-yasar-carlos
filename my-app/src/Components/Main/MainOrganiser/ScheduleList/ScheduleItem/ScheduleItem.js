@@ -5,6 +5,9 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BsChevronCompactDown } from "react-icons/bs";
 import { useState } from "react";
 
+
+// This component takes in quiet a bit of props to build
+// props: updateStarRating to be used by StarRating component
 function ScheduleItem({
   id,
   taskName,
@@ -19,10 +22,10 @@ function ScheduleItem({
 }) {
   const [active, setActive] = useState(false);
 
-  // dont think it is good practice but have used the external state to update this internal one
+  // single source of truth
   const [comment, setComment] = useState(taskComment)
 
-  // keep the comment in a state
+  // used the <input> onChange
   function handleComment(e) {
     setComment(e.target.value);
   }
