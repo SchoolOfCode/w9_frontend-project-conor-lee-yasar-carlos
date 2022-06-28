@@ -1,11 +1,11 @@
 import React from "react";
-import StarRating from "../StarRating";
+import StarRating from "../StarRating/StarRating";
 import { FiPlusCircle } from "react-icons/fi";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BsChevronCompactDown } from "react-icons/bs";
 import { useState } from "react";
 
-function ListItem({
+function ScheduleItem({
   id,
   taskName,
   weekend,
@@ -86,4 +86,4 @@ function ListItem({
   );
 }
 
-export default ListItem;
+export default ScheduleItem;

@@ -1,12 +1,11 @@
 import React from "react";
-import TodoList from "./Todo-List";
-import ResourceList from "./Resources-List";
-import WeekendList from "./Weekend-List";
+import ScheduleList from "./ScheduleList/ScheduleList";
+import ResourceList from "./ResourcesList/ResourceList";
+import WeekendList from "./WeekendList/WeekendList";
 
-function Todo({
-  toDoClass,
+function MainOrganiser({
+  mainOrganiserClass,
   listData,
-  resourceData,
   weekendListData,
   weekendCheck,
   weekendClick,
@@ -27,7 +26,7 @@ function Todo({
     });
 
     return (
-      <div className="todo" style={{visibility: toDoClass }}>
+      <div className="todo" style={{visibility: mainOrganiserClass }}>
         <div className="todo-container">
           <div className="h2">
             <h2>Today's subjects</h2>
@@ -46,18 +45,18 @@ function Todo({
         </div>
         <div className="resources-container">
           <ResourceList
-            resourceData={resourceData}
+            resourceData={listData.resources}
           />
         </div>
       </div>
     );
   } else {
     return (
-      <div className="todo" style={{visibility: toDoClass}}>
+      <div className="todo" style={{visibility: mainOrganiserClass}}>
         <div className="todo-container">
-          <TodoList 
+          <ScheduleList 
             weekendClick={weekendClick}
-            listData={listData}
+            listData={listData.list}
             updateStarRating={updateStarRating}
             updateCompletedTask={updateCompletedTask}
             updateTaskComment={updateTaskComment}
@@ -65,7 +64,7 @@ function Todo({
         </div>
         <div className="resources-container">
           <ResourceList
-            resourceData={resourceData}
+            resourceData={listData.resources}
           />
         </div>
       </div>
@@ -73,4 +72,4 @@ function Todo({
   }
 }
 
-export default Todo;
+export default MainOrganiser;

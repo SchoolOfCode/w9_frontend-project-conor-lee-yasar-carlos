@@ -1,5 +1,5 @@
 import React from "react";
-import WeekendListItem from "./Weekend-listitem/ListItem";
+import WeekendListItem from "./WeekendItem/WeekendItem";
 
 
 function WeekendList({

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import ListItem from "./Todo-listitem";
+import ListItem from "./ScheduleItem/ScheduleItem";
 
 
-function TodoList({
+function ScheduleList({
   listData,
   weekendClick,
   updateStarRating,
@@ -36,4 +36,4 @@ function TodoList({
     );
   }
 
-export default TodoList;
+export default ScheduleList;

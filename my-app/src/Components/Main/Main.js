@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import Categories from "../Categories/Categories";
+import Categories from "./Categories/Categories";
 import Header from "./Header/Header";
-import Todo from "../Todo-list";
-import WeekendButton from "../Categories/Weekend-button";
+import MainOrganiser from "./MainOrganiser/MainOrganiser";
 
 function Main({ imageVisibility }) {
-  const [toDoClass, setToDoClass] = useState("hidden");
+  const [mainOrganiserClass, setMainOrganiserClass] = useState("hidden");
   const [dayId, setDayId] = useState(0);
   const [weekendCheck, setWeekendCheck] = useState(false);
   const [weekendListData, setWeekendListData] = useState([]);
@@ -22,7 +21,7 @@ function Main({ imageVisibility }) {
   function handleClick(e) {
     setWeekendCheck(false);
     setDayId(e.target.id - 1);
-    setToDoClass("visible");
+    setMainOrganiserClass("visible");
   }
 
   function updateWeekNumber(e) {
@@ -38,7 +37,7 @@ function Main({ imageVisibility }) {
   // weekend button click changes div classes to visible and sets check to true
   function weekendButtonClick() {
     setWeekendCheck(true);
-    setToDoClass("visible");
+    setMainOrganiserClass("visible");
     console.log(weekendCheck);
   }
 
@@ -163,15 +162,14 @@ function Main({ imageVisibility }) {
     });
   }
 
-  // fetches data from the server based on the week selected from the dropdown
-  async function getDayData() {
-    let response = await fetch(`http://localhost:3000/api/v1/1/${weekNumber}`);
-    let data = await response.json();
-    setDayData(data.payload);
-  }
-
   useEffect(() => {
-    getDayData();
+    // fetches data from the server based on the week selected from the dropdown
+    async function getDayData() {
+      let response = await fetch(`http://localhost:3000/api/v1/1/${weekNumber}`);
+      let data = await response.json();
+      setDayData(data.payload);
+    }
+    getDayData()
   }, [weekNumber]);
 
   return (
@@ -189,10 +187,9 @@ function Main({ imageVisibility }) {
           handleClick={handleClick}
           weekendButtonClick={weekendButtonClick}
         />
-        <Todo
-          toDoClass={toDoClass}
-          listData={dayData[dayId].list}
-          resourceData={dayData[dayId].resources}
+        <MainOrganiser
+          mainOrganiserClass={mainOrganiserClass}
+          listData={dayData[dayId]}
           weekendCheck={weekendCheck}
           weekendListData={dayData}
           weekendClick={weekendAddClick}

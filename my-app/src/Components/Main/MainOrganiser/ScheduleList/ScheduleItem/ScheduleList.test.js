@@ -2,7 +2,7 @@ import { test, expect, jest } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import WeekendButton from ".";
+import WeekendButton from "./ScheduleItem";
 
 describe("Weekend-Button component tests", () => {
   test("Gets button based on aria-label value and checks if rendered", () => {
