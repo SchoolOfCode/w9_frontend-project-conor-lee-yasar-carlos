@@ -4,12 +4,19 @@ import Header from "./Header/Header";
 import MainOrganiser from "./MainOrganiser/MainOrganiser";
 
 function Main({ imageVisibility }) {
+  // use by MainOrganiser component to show/hide the ScheduleList component
   const [mainOrganiserClass, setMainOrganiserClass] = useState("hidden");
+  // track which day of the week was selected
   const [dayId, setDayId] = useState(0);
-  const [weekendCheck, setWeekendCheck] = useState(false);
-  const [weekendListData, setWeekendListData] = useState([]);
+  // track the selected week
   const [weekNumber, setWeekNumber] = useState(1);
-
+  // track if the weekend button was clicked so MainOrganiser component renders the right tasks
+  const [weekendCheck, setWeekendCheck] = useState(false);
+  // To store and used to display the tasks added to the weekend list
+  const [weekendListData, setWeekendListData] = useState([]);
+  
+  // stores the weeks data fetched from API.
+  // Dummy data was added for initial render, not used in app.
   const [dayData, setDayData] = useState([
     {
       list: [{ id: 1, topic: "" }],
@@ -17,18 +24,21 @@ function Main({ imageVisibility }) {
     },
   ]);
 
-  // day button click changes div classes to visible and sets weekend check to false and sets the day id
+  // day button click changes div classes to visible and sets weekend check to false 
+  // and sets the day id
   function handleClick(e) {
     setWeekendCheck(false);
     setDayId(e.target.id - 1);
     setMainOrganiserClass("visible");
   }
 
+  // used by the Dropdown component
   function updateWeekNumber(e) {
     setWeekNumber(e.target.id);
   }
 
-  // Adds a list item to the weekend list
+  // used by ScheduleItem to update local state.
+  // Same task can only be added once
   function weekendAddClick({ taskId, topic }) {
     setWeekendListData([...weekendListData, { id: taskId, topic: topic }]);
     updateWeekendTask(taskId);
@@ -41,7 +51,7 @@ function Main({ imageVisibility }) {
     console.log(weekendCheck);
   }
 
-  // deletes a list item from the weekend list
+  // used by WeekendItem to update local state weekendTask
   function weekendDelete(weekendId) {
     setWeekendListData(
       weekendListData.filter((index) => index.id !== weekendId)
@@ -49,7 +59,8 @@ function Main({ imageVisibility }) {
     updateWeekendTask(weekendId);
   }
 
-  // update the star rating of a task
+  // StarRating component takes this as a prop
+  // to update this localstate dayData
   function updateStarRating({ rating, taskId }) {
     let found = false;
     dayData.forEach((day) => {
@@ -77,7 +88,7 @@ function Main({ imageVisibility }) {
     });
   }
 
-  // update if a task in the weekend
+  // update local state dayData
   // takes in the task id and toogles the weekend from true to false
   function updateWeekendTask(taskId) {
     let found = false;
@@ -106,7 +117,8 @@ function Main({ imageVisibility }) {
     });
   }
 
-  // update the completed state for a task
+  // update local state dayData
+  // toggles the completed state for a task
   function updateCompletedTask(taskId) {
     let found = false;
     dayData.forEach((day) => {
@@ -134,7 +146,8 @@ function Main({ imageVisibility }) {
     });
   }
 
-  // update the comment made for a specific task to the state
+  // updates local state dayData
+  // update/add the comment made for a specific task to the state
   function updateTaskComment({ taskId, comment }) {
     let found = false;
     dayData.forEach((day) => {
@@ -174,6 +187,7 @@ function Main({ imageVisibility }) {
 
   return (
     <div className="App">
+      {/* temporary image to give the idea of the site being part of the website */}
       <img
         className={imageVisibility}
         src="https://puu.sh/J7zIq/efe0cf5dad.png"

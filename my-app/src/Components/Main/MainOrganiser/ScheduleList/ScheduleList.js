@@ -1,7 +1,8 @@
-import React, { useState } from "react";
 import ListItem from "./ScheduleItem/ScheduleItem";
 
 
+// Props:
+// listData is an array with the tasks for the day as objects
 function ScheduleList({
   listData,
   weekendClick,
