@@ -79,13 +79,13 @@ An object is returned for both success or failure.
 // object received from POST success
 {
   success: true,
-  message: 'Comments successfully added'
+  payload: '<comment_string>'
 }
 
 // object received from POST when unable to create
 {
   success: false,
-  message: 'Unable to add comment'
+  payload: 'Unable to add comment'
 }
 ```
 
@@ -106,13 +106,13 @@ Amends the comment for the specified task.
 // object received from POST success
 {
   success: true,
-  message: 'Comments successfully added'
+  payload: '<comment_string>'
 }
 
 // object received from POST when unable to update
 {
   success: false,
-  message: 'Unable to add comment'
+  payload: 'Unable to update the task comment'
 }
 ```
 
@@ -135,13 +135,17 @@ Amends the metadata for the specified task.
 // object received from POST success
 {
   success: true,
-  message: 'Task metadata updated successfully'
+  payload: {
+    rating: 'number',
+    weekend: 'true',
+    completed: 'boolean',
+  }
 }
 
 // object received from POST when unable update the metadata
 {
   success: false,
-  message: 'Unable to update the task metadata'
+  payload: 'Unable to update the task metadata'
 }
 ```
 
@@ -162,12 +166,12 @@ Amends the metadata for a single resource.
 // object received from POST success
 {
   success: true,
-  message: 'Resource metadata updated successfully'
+  payload: {rating: 'boolean'}
 }
 
 // object received from POST when unable to update the metadata
 {
   success: false,
-  message: 'Unable to update the resource metadata'
+  payload: 'Unable to update the resource metadata'
 }
 ```
