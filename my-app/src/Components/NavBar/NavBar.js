@@ -7,7 +7,7 @@ function NavBar({hideImage, logIn}) {
         <div className='logo'><img src="https://www.schoolofcode.co.uk/static/logo-51c754388b198e5bbb0d08a971ebbfa2.png" alt="" /></div>
         <div className='logo-text'>The Free Coding Bootcamp</div>
       </div>
-      <div className='nav-right'>
+      <div aria-label="main" className='nav-right'>
         <ul>
           <li>Home</li>
           <li>Intensive Bootcamp</li>
