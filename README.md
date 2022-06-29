@@ -68,7 +68,7 @@ We finally presented our App in the afternoon to a panel of judges.
 Install frontend with npm
 
 ```bash
-  npm install w9_frontend-project-conor-lee-yasar-carlos
+  git clone https://github.com/SchoolOfCode/w9_frontend-project-conor-lee-yasar-carlos
   cd my-app
   npm install
 ```
@@ -76,7 +76,7 @@ Install frontend with npm
 Install backend with npm
 
 ```bash
-  npm install w9_backend-project-conor-lee-yasar-carlos
+  git clone https://github.com/SchoolOfCode/w9_backend-project-conor-lee-yasar-carlos
   npm install
 ```
 ## Deployment
@@ -107,6 +107,7 @@ To run tests, run the following command
 
 
 #### Get item
+_Returns all the days for the specified week number._
 
 
     `api/v1/<user_id>/<week_number>`
@@ -116,6 +117,7 @@ To run tests, run the following command
 
 
 #### Post item
+_Add a comment to a task by its ID._
 
     `api/v1/<user_id>/<week_number>/<day_number>/comment/<task_id>`
 
@@ -125,7 +127,7 @@ To run tests, run the following command
 
 #### Patch item
 
-update task unique comment_
+_update task unique comment_
 
      `api/v1/<user_id>/<week_number>/<day_number>/comment/<task_id>`
 
@@ -137,15 +139,6 @@ update task unique comment_
 
      `api/v1/<user_id>/<week_number>/<day_number>/resource/<resource_id>`
 
-
-#### Get
-
----
-
-Returns all the days for the specified week number.
-Payload is an array of objects. Each object represents a day in the week.
-
-     `api/v1/<user_id>/<week_number>`
 
 ## License
 
