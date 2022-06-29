@@ -24,7 +24,7 @@ function WeekendItem({
                 <StarRating taskRating={weekendRating} taskId={weekendId} updateStarRating={updateStarRating} />         
               </div>
             </div>
-            <span aria-label="accordion-shevron" className='chevron-icon'><BsChevronCompactDown /></span>
+            <span aria-label="accordion-chevron" className='chevron-icon'><BsChevronCompactDown /></span>
         </div>
         <button className='add-to-weekend' data-txt={listData} onClick={() => {weekendListDelete(weekendId)}}>
             <span className='weekend-cross-icon'><TiDeleteOutline id={id} data-txt={listData} onClick={() => {weekendListDelete(weekendId)}} /></span>

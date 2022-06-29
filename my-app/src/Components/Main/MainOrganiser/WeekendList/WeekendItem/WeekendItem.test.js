@@ -17,7 +17,7 @@ describe("Main component tests", () => {
     const listData = "test"
     render(<WeekendItem listData={listData}/>);
 
-    const element = screen.getByLabelText(/accordion-shevron/i)
+    const element = screen.getByLabelText(/accordion-chevron/i)
 
     expect(element).toBeInTheDocument();
   });
