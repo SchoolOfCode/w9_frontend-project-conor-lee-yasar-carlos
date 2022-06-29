@@ -12,10 +12,6 @@ describe("Main component tests", () => {
 
     expect(element).toBeInTheDocument();
   });
-
-  test("Checks if log-in button is rendered and mock fn is called onClick", () => {
-
-  })
 })
 
 
