@@ -3,6 +3,8 @@ import { TiDeleteOutline} from 'react-icons/ti'
 import StarRating from '../../ScheduleList/StarRating/StarRating'
 import { BsChevronCompactDown } from 'react-icons/bs'
 
+// renders any schedule items that were added to the weekend list by the user 
+// items can then be given a rating and removed when completed
 
 function WeekendListItem({
   id,
