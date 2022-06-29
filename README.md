@@ -1,3 +1,4 @@
+
 # School of Code Bootcamper Organiser
 
 This App enables School of Code Bootcampers to organise, reference, comment and rate subjects taught on the bootcamp on a daily and weekly basis. The App also features a weekend todo list where students can move daily subjects to the weekend list for further study.
@@ -144,7 +145,7 @@ update task unique comment_
 Returns all the days for the specified week number.
 Payload is an array of objects. Each object represents a day in the week.
 
-   `api/v1/<user_id>/<week_number>`
+     `api/v1/<user_id>/<week_number>`
 
 ## License
 
