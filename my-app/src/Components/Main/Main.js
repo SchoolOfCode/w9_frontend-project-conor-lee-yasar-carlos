@@ -191,7 +191,7 @@ function Main({ imageVisibility }) {
       <img
         className={imageVisibility}
         src="https://puu.sh/J7zIq/efe0cf5dad.png"
-        alt=""
+        alt="Landing page"
       />
       <Header />
       <main>

@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import ScheduleItem from "./ScheduleItem";
 
-describe("Weekend-Button component tests", () => {
+describe("ScheduleItem tests", () => {
   test("Gets button based on aria-label value and checks if rendered", () => {
     render(<ScheduleItem />);
     
