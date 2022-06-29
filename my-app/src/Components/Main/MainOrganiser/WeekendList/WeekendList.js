@@ -1,5 +1,5 @@
 import React from "react";
-import WeekendListItem from "./WeekendItem/WeekendItem";
+import WeekendItem from "./WeekendItem/WeekendItem";
 
 
 // The component just holds the list of weekend items
@@ -11,7 +11,7 @@ function WeekendList({
 }) {
     return (
       <div className="weekend-todo-box">
-        <WeekendListItem
+        <WeekendItem
           listData={weekendTaskData.topic}
           weekendListDelete={weekendListDelete}
           weekendId={weekendTaskData.id}
