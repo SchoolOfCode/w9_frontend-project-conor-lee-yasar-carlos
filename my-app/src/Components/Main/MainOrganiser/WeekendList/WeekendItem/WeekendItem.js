@@ -6,7 +6,7 @@ import { BsChevronCompactDown } from 'react-icons/bs'
 // renders any schedule items that were added to the weekend list by the user 
 // items can then be given a rating and removed when completed
 
-function WeekendListItem({
+function WeekendItem({
   id,
   listData,
   weekendListDelete,
@@ -24,7 +24,7 @@ function WeekendListItem({
                 <StarRating taskRating={weekendRating} taskId={weekendId} updateStarRating={updateStarRating} />         
               </div>
             </div>
-            <span className='chevron-icon'><BsChevronCompactDown /></span>
+            <span aria-label="accordion-shevron" className='chevron-icon'><BsChevronCompactDown /></span>
         </div>
         <button className='add-to-weekend' data-txt={listData} onClick={() => {weekendListDelete(weekendId)}}>
             <span className='weekend-cross-icon'><TiDeleteOutline id={id} data-txt={listData} onClick={() => {weekendListDelete(weekendId)}} /></span>
@@ -35,5 +35,5 @@ function WeekendListItem({
   )
 }
 
-export default WeekendListItem
+export default WeekendItem
 

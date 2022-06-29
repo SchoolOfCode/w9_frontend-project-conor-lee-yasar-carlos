@@ -1,6 +1,5 @@
-import { test, expect, jest } from "@jest/globals";
+import { test, expect } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import Main from "./Main";
 
@@ -12,7 +11,12 @@ describe("Main component tests", () => {
 
     expect(element).toBeInTheDocument();
   });
+
+  test("Checks if main tag is being rendered with all components inside", () => {
+    render(<Main />);
+
+    const element = screen.getByRole("main")
+
+    expect(element).toBeInTheDocument();
+  });
 })
-
-
-
