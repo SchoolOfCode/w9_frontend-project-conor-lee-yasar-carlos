@@ -66,7 +66,7 @@ function ScheduleItem({
           </div>
         </div>
         <span className="chevron-icon">
-          <BsChevronCompactDown onClick={() => {active ? setActive(false) : setActive(true)}} />
+          <BsChevronCompactDown aria-label="chevron-click" onClick={() => {active ? setActive(false) : setActive(true)}} />
         </span>
       </div>
       <button 

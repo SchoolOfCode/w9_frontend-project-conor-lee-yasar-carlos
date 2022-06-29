@@ -2,7 +2,7 @@ import { test, expect, jest } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import WeekendButton from ".";
+import WeekendButton from "./WeekendButton";
 
 describe("Weekend-Button component tests", () => {
   test("Checks for a button with text Weekend to be rendered", () => {

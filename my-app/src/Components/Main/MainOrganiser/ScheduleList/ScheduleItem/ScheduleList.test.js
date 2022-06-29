@@ -2,11 +2,11 @@ import { test, expect, jest } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
-import WeekendButton from "./ScheduleItem";
+import ScheduleItem from "./ScheduleItem";
 
 describe("Weekend-Button component tests", () => {
   test("Gets button based on aria-label value and checks if rendered", () => {
-    render(<WeekendButton />);
+    render(<ScheduleItem />);
     
     const linkElement = screen.getByLabelText(/chevron-click/i);
   
@@ -14,16 +14,16 @@ describe("Weekend-Button component tests", () => {
   
   });
 
-  test("Checks if chevron button is rendered and gets element based on aria-label then checks if classname changes after onClick", () => {
-    render(<WeekendButton  />);
+  test("Checks if submit button is rendered and if the onClick mock fn is called", () => {
+    const handleCommentClick = jest.fn();
+
+    render(<ScheduleItem updateTaskComment={handleCommentClick} />);
     
-    const linkElement = screen.getByLabelText(/chevron-click/i);
+    const linkElement = screen.getByText(/Submit/i);
 
     userEvent.click(linkElement)
-  
-    const getByClass = screen.getByLabelText(/class/i);
 
-    expect(getByClass).toHaveClass("true");
+    expect(handleCommentClick).toHaveBeenCalled();
   });
 
 })
