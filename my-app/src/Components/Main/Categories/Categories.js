@@ -4,7 +4,6 @@ import Dropdown from "./Dropdown/Dropdown";
 import WeekendButton from "./WeekendButton/WeekendButton";
 
 function Categories({ dayData, handleClick, updateWeekNumber, weekendButtonClick }) {
-
   return (
     <div className="categories-container">
       <div className="categories-box">
