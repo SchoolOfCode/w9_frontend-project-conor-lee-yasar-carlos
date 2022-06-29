@@ -3,7 +3,6 @@ import DayButton from "./DayButton/DayButton";
 import Dropdown from "./Dropdown/Dropdown";
 import WeekendButton from "./WeekendButton/WeekendButton";
 
-
 function Categories({ dayData, handleClick, updateWeekNumber, weekendButtonClick }) {
   return (
     <div className="categories-container">
