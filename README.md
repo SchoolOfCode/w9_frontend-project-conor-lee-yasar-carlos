@@ -1,22 +1,151 @@
-# National Bootcamp - Week Nine Project Brief
+# School of Code Bootcamper Organiser
 
-For your project, you’ll be using what you’ve learned on the course so far to try and improve the lives of your users. In this case, the users will be close to home: bootcampers!
+This App enables School of Code Bootcampers to organise, reference, comment and rate subjects taught on the bootcamp on a daily and weekly basis. The App also features a weekend todo list where students can move daily subjects to the weekend list for further study.
+## Team Members 
 
-To do this, you’ll need to take the time to understand your user (a bootcamper), their experiences, and their problems. Specifically, it might be good to focus on how to enhance the remote experience of a bootcamper, or what can help them with the vast amount of learning there is to do as a new developer. What do they need? What problem might they have that your application could solve for them? How can you get into the mindset of your user and keep them at the centre of your problem-solving?
+This App was created during the project week by the following Bootcampers:
 
-The high level outcomes from this project should be:
+- Carlos Alford  https://github.com/CarlosEAM
+- Conor Goddard  https://github.com/ConorG1247
+- Lee Conroy  https://github.com/leeconroy77
+- Yasar Gulzar  https://github.com/Yasar000
 
-- A minimum viable product (MVP) showcasing an innovative full stack application which meets the user need you’ve identified
-- A presentation, complete with how you worked as a team and a demonstration of the project
 
-Your project application might include the following:
+## Demo
 
-- Include a user experience created in React
-- Build a REST API which is used by your front-end
-- Be supported by a Postgresql database with multiple tables
-- Be built and managed in an agile way
-- Utilise testing for ensuring robust code
 
-Remember, you only have a few days to code a solution, so being agile is key. That means brainstorming what you want to build, and working in sprints to deliver value each time. After each sprint, you can reassess and either continue on course or iterate towards a better solution. Have a plan which is incremental steps, rather than all or nothing.
 
-Click the link to see the [Project Guidelines](https://github.com/SchoolOfCode/project-guidelines/blob/master/project-week.md)
+![bandicam 2022-06-29 11-56-37-202](https://user-images.githubusercontent.com/90255369/176423074-ae9437b8-225b-4250-a065-f0a370a462f0.gif)
+## Day 1
+
+At the start of the first day we were put into our group for the week long project. After a brief introdution, we started the process of planning our App. The brief was to create an App that fellow bootcampers would find useful while completing the course. 
+
+We all felt that an organiser of some description would be something we would all use so we set about brainstorming ideas using the Disney Ideation process.
+
+Once we had completed that process and decided what our MVP would be and what features we would like to include, we then designed the app using low and high fidelity wireframes. 
+
+The next step was to take the design and then break it down into the components we would use in React. This process enabled us to plan a detailed component file tree, from which we were able to produce detailed and specific tickets for the team to work on for the rest of the week.
+
+The final part of the day was spent discussing and planning how the information in the backend would be structured in order to serve the frontend.
+## Day 2
+
+We decided to spilt the teams in half and pair-programme, with one pair working on the frontend and one on the backend. Both teams spent the day working on the various tickets in order to produce our MVP. 
+
+The frontend team spent most of the day working on the main components in React, following the component plan in order to ensure that the props were being handed down correctly. Basic CSS was also carried out and structured around the components.
+
+The backend team constructed all of the 'dummy data' which was required to pass to the subject items and the resource list. Once this was completed the team concentrated on building the server with node and setting up the various routes in Express.
+## Day 3
+
+Day 3 was spent working in our pairs again with the aim of getting the MVP finished by the end of the day. 
+
+The frontend continued working on the various components and functions in order to populate the daily buttons and detail the subject items and resources list. The CSS was mostly completed.
+
+The backend team spent the day finishing off the routes and providing some additional 'dummy data' for the resource list. 
+
+By the end of day 3, we had completed the MVP and spend some time discussing which stretch goals we would try and achieve by the end of the final coding day tomorrow.
+## Day 4
+
+Having discussed the evening before what stretch goals we would like to achieve, we spent the fourth day all working together on some extra features.
+
+It was decided that we would introduce a star rating to each individual subject and these would be calculated into an average and displayed on the daily button. It was also decided that two buttons should be added to the subject list item, in order to indicate that the task had been completed and also to move the subject to a seperate weekend todo list.
+
+
+## Day 5
+
+We spent a brief period in the morning finishing off some last details before we spent a couple of hours throughly practising our presentaion.
+
+We finally presented our App in the afternoon to a panel of judges.
+## Tech Stack
+
+**Client:** HTML, CSS, Javascript, React.
+
+**Server:** Node, Express, PostgreSQL.
+
+
+## Installation
+
+Install frontend with npm
+
+```bash
+  npm install w9_frontend-project-conor-lee-yasar-carlos
+  cd my-app
+  npm install
+```
+    
+Install backend with npm
+
+```bash
+  npm install w9_backend-project-conor-lee-yasar-carlos
+  npm install
+```
+## Deployment
+
+
+To deploy this project in the frontend folder run
+
+```bash
+  npm start
+```
+To deploy this project in the backend folder run
+
+```bash
+  npm run dev
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+
+## API Reference
+
+
+#### Get item
+
+
+    `api/v1/<user_id>/<week_number>`
+
+
+
+
+
+#### Post item
+
+    `api/v1/<user_id>/<week_number>/<day_number>/comment/<task_id>`
+
+
+
+
+
+#### Patch item
+
+update task unique comment_
+
+     `api/v1/<user_id>/<week_number>/<day_number>/comment/<task_id>`
+
+  _update task meta_
+
+     `api/v1/<user_id>/<week_number>/<day_number>/task/<task_id>`
+
+  _update resource meta_
+
+     `api/v1/<user_id>/<week_number>/<day_number>/resource/<resource_id>`
+
+
+#### Get
+
+---
+
+Returns all the days for the specified week number.
+Payload is an array of objects. Each object represents a day in the week.
+
+   `api/v1/<user_id>/<week_number>`
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/) @Lee Conroy 2022
