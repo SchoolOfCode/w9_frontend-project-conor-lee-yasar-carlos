@@ -6,7 +6,7 @@ This App enables School of Code Bootcampers to organise, reference, comment and 
 
 This App was created during the project week by the following Bootcampers:
 
-- Carlos Alford  https://github.com/CarlosEAM
+- Carlos Alford  https://github.com/web-shuriken
 - Conor Goddard  https://github.com/ConorG1247
 - Lee Conroy  https://github.com/leeconroy77
 - Yasar Gulzar  https://github.com/Yasar000
